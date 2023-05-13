@@ -1,0 +1,5 @@
+INSERT INTO DIGITALBOOK_BOOK (id, title, category, author, image, price, publisher, active, content) VALUES (1, 'book1', 'category1','auth1','','','pub1',true,'');
+INSERT INTO DIGITALBOOK_BOOK (id, title, category, author, image, price, publisher, active, content) VALUES (2, 'book2', 'category2','auth2','','','pub2',true,'');
+INSERT INTO DIGITALBOOK_BOOK (id, title, category, author, image, price, publisher, active, content) VALUES (3, 'book3', 'category3','auth3','','','pub3',true,'');
+INSERT INTO DIGITALBOOK_BOOK (id, title, category, author, image, price, publisher, active, content) VALUES (4, 'book4', 'category4','auth4','','','pub4',true,'');
+INSERT INTO DIGITALBOOK_BOOK (id, title, category, author, image, price, publisher, active, content) VALUES (5, 'book5', 'category5','auth5','','','pub5',true,'');

@@ -1,0 +1,49 @@
+<h1 class="text-center pb-3">Search Books</h1>
+<form #searchBookForm="ngForm" (submit)="searchBook(searchBookForm)">
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Title</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" ngModel name="title" id="title"
+                placeholder="search by title of book">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Author</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" ngModel name="author" id="author"
+                placeholder="Search by auther of book">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Publisher</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" ngModel name="publisher" id="publisher"
+                placeholder="Search by Publisher of book">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Category</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" ngModel name="category" id="category"
+                placeholder="Search by category of book">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Price</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" ngModel name="price" id="price"
+                placeholder="Search by price of book">
+        </div>
+    </div>
+    <div class="d-flex flex-row-reverse">
+        <button class="btn btn-primary" type="submit">Search</button>
+    </div>
+</form>
+<div class="mt-5">
+    <app-notfound *ngIf="notfound" [itemName]="'book'"></app-notfound>
+    <div class="row">
+        <div class="col-auto m-auto my-3" *ngFor="let book of booksFound">
+            <book [allowSubscription]="allowSubscription()" [bookDetails]="book"></book>
+        </div>
+    </div>
+</div>

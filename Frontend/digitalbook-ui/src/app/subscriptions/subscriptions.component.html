@@ -1,0 +1,18 @@
+<h1 class="text-center pb-3">Subscriptions</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Subscription Id</th>
+            <th scope="col">Book</th>
+            <th colspan="2">Action</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let subscription of mySubscriptions">
+        <tr>
+            <th scope="row">{{subscription.id}}</th>
+            <td>{{subscription.book.title}}</td>
+            <td><button class="btn btn-warning" (click)="readSubscribedBook(subscription)">Read</button></td>
+            <td><button class="btn btn-danger" (click)="cancelSubscription(subscription)">Cancel</button></td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,69 @@
+<h1 class="text-center pb-3">Sign Up</h1>
+<form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Fullname</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" name="fullName" id="fullName" formControlName="fullname"
+                placeholder="Enter your full name">
+                <small *ngIf="showValidationError('fullname')" id="fullnameHelpBlock" class="form-text text-danger">
+                    Fullname is mandatory. Enter your fullname.
+                </small>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+            <input type="email" class="form-control" email name="email" id="email" formControlName="email"
+                placeholder="Enter your email id">
+                <small *ngIf="showValidationError('email')" id="emailHelpBlock" class="form-text text-danger">
+                    Email is mandatory. Enter correct email.
+                </small>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Password</label>
+        <div class="col-sm-10">
+            <input type="password" class="form-control" name="password" id="password" formControlName="password"
+                placeholder="Enter your password">
+                <small id="passwordInfoBlock" class="form-text text-muted">
+                    Your password must be 8-20 characters long, contain letters, special characters and numbers, and must not
+                    contain spaces or emoji.<br>
+                </small>
+                <small *ngIf="showValidationError('password')" id="passwordHelpBlock" class="form-text text-danger">
+                    Please enter password correctly as per the instruction
+                </small>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Confirm Password</label>
+        <div class="col-sm-10">
+            <input type="password" class="form-control" name="confirmPassword" id="confirmPassword"
+                formControlName="confirmPassword" placeholder="Re-enter your password">
+                <small *ngIf="showValidationError('confirmPassword')" id="confirmPasswordHelpBlock" class="form-text text-danger">
+                    Password is not matching
+                </small>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" for="role">Select Role</label>
+        <div class="col-sm-10">
+            <div class="form-check">
+                <input formControlName="role" class="form-check-input" type="radio" name="role" id="author"
+                    value="AUTHOR">
+                <label class="form-check-label" for="author">
+                    Author
+                </label>
+            </div>
+            <div class="form-check">
+                <input formControlName="role" class="form-check-input" type="radio" name="role" id="reader"
+                    value="READER">
+                <label class="form-check-label" for="author">
+                    Reader
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex flex-row-reverse">
+        <button [disabled]="!signUpForm.valid" class="btn btn-danger" type="submit">Sign Up</button>
+    </div>
+</form>

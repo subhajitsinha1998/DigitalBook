@@ -1,0 +1,42 @@
+<h1 class="text-center pb-3">Create Books</h1>
+<form #createBookForm="ngForm" (submit)="createBook(createBookForm)">
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Title</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" ngModel name="title" id="title">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Category</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" ngModel name="category" id="category">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Image</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" ngModel name="image" id="image">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Price</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" ngModel name="price" id="price">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Publisher</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" ngModel name="publisher" id="publisher">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Content</label>
+        <div class="col-sm-10">
+            <textarea type="text" class="form-control" ngModel name="content" id="content"></textarea>
+        </div>
+    </div>
+    <div class="d-flex flex-row-reverse">
+        <button class="btn btn-danger" type="submit">Save</button>
+    </div>
+</form>
